@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//First, Validate the file name
   	if(empty($_FILES['icon']['name']))
   	{
-  		echo " File name is empty! ";
+  		echo "The icon file name is empty!";
   		exit;
   	}
  
@@ -16,19 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//Too long file name?
   	if(strlen ($upload_file_name)>100)
   	{
-  		echo " too long file name ";
+  		echo "The icon file name is too long!";
   		exit;
   	}
  
   	//replace any non-alpha-numeric cracters in th file name
   	$upload_file_name = preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $upload_file_name);
- 
-  	//set a limit to the file upload size
-  	if ($_FILES['icon']['size'] > 1000000) 
-  	{
-		echo " too big file ";
-  		exit;        
-    }
  
     //Save the file
     $dest=__DIR__.'/media/icons/'.$upload_file_name;
@@ -44,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//First, Validate the file name
   	if(empty($_FILES['game']['name']))
   	{
-  		echo " File name is empty! ";
+  		echo "The game file name is empty!";
   		exit;
   	}
  
@@ -52,19 +45,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//Too long file name?
   	if(strlen ($upload_file_name)>100)
   	{
-  		echo " too long file name ";
+  		echo "The game file name is too long!";
   		exit;
   	}
  
   	//replace any non-alpha-numeric cracters in th file name
   	$upload_file_name = preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $upload_file_name);
- 
-  	//set a limit to the file upload size
-  	if ($_FILES['game']['size'] > 1000000) 
-  	{
-		echo " too big file ";
-  		exit;        
-    }
  
     //Save the file
     $dest=__DIR__.'/media/games/'.$upload_file_name;
