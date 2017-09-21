@@ -75,13 +75,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   }
 }
 
-//insert the file and game information into the database
+//insert the files and game information into the database
 $Game_Name = $_POST["Game_Name"];
 $Author_Name = $_POST["Author_Name"];
 $Game_Description = $_POST["Game_Description"];
 $Game_Type = $_POST["Game_Type"];
 $icon = "db/media/icons/" . $_FILES['icon']['name'];
-$game = "db/media/games/" . $_FILES['icon']['name'];
+$game = "db/media/games/" . $_FILES['game']['name'];
 $table = "";
 
 if($Game_Type == "Recreational") {
@@ -94,4 +94,8 @@ if($Game_Type == "Recreational") {
 
 $query = "INSERT INTO $table (Author_Name, Game_Name, Game_Type, Game_Description, icon, game) VALUES('$Author_Name', '$Game_Name', '$Game_Type', '$Game_Description', '$icon', '$game')";
 mysqli_query($link, $query);
+
+$link = "http://$_SERVER[HTTP_HOST]";
+header("Location: $link");
+die();
 ?>

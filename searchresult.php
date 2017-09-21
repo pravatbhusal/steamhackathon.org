@@ -55,9 +55,6 @@
                 include("db/dbconnection.php");
                 $search = $_POST["search"];
                 $resultFound = false;
-                $recreationalGames = array();
-                $informationalGames = array();
-                $educationalGames = array();
                 
                 //query through each table
                 $queryRecreational = "SELECT * FROM recreational_games";
@@ -70,7 +67,6 @@
                 
                 /* iterate through games within the game type (recreational,informational,educational) */
                 while($row = mysqli_fetch_array($resultRecreational)) {
-                  $recreationalGames[] = $row;
                   //if the search result contained a string from a Game Name row, not case-sensitive
                   if(strpos(strtolower($row['Game_Name']), strtolower($search)) !== false) {
                     $gameName = $row['Game_Name'];
@@ -81,14 +77,13 @@
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" data-bs-hover-animate="pulse" href="#" role="button">Play '.$gameName.'!</a></p> 
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'!</a></p>  
                     </div>'; 
                       
                     $resultFound = true;
                     }
                 }
                 while($row = mysqli_fetch_array($resultInformational)) {
-                  $informationalGames[] = $row;
                   //if the search result contained a string from a Game Name row, not case-sensitive
                   if(strpos(strtolower($row['Game_Name']), strtolower($search)) !== false) {
                     $gameName = $row['Game_Name'];
@@ -99,14 +94,13 @@
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" data-bs-hover-animate="pulse" href="#" role="button">Play '.$gameName.'!</a></p> 
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'!</a></p>  
                     </div>'; 
                       
                     $resultFound = true;
                     }
                 }
                 while($row = mysqli_fetch_array($resultEducational)) {
-                  $educationalGames[] = $row;
                   //if the search result contained a string from a Game Name row, not case-sensitive
                   if(strpos(strtolower($row['Game_Name']), strtolower($search)) !== false) {
                     $gameName = $row['Game_Name'];
@@ -117,7 +111,7 @@
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" data-bs-hover-animate="pulse" href="#" role="button">Play '.$gameName.'!</a></p> 
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'!</a></p>  
                     </div>'; 
                       
                     $resultFound = true;
@@ -186,4 +180,14 @@
     <!--jquery and bootstrap-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        function clickPlay(e) {
+            var gameName = ($(e.target).text()).replace("Play ", "");
+            gameName = gameName.replace("!","");
+            
+            //send a GET request to the playgame.php with the gameName variable
+            window.location.replace("playgame.php" + "?gameName=" + gameName);
+        }
+    </script>
 </html>
