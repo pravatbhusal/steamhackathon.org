@@ -1,0 +1,16 @@
+body {
+    padding-top: 70px; 
+    background: #ffffff url("rsrc/background.jpg");
+}
+
+#uploadGlyph {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#gameContent {
+  /* shortens the jumbotron width, change the background, and make a circular border */
+    width: 80%;
+    background: #fcfcfc;
+    border-radius: 15px;
+}
