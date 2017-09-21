@@ -10,3 +10,11 @@ This website was created as a project under Microsoft/S.T.E.A.M. achievers emplo
 - Eric Tutu (I.T. coordinator)
 - Naga Kishore (S.T.E.A.M. achievers Software architect)
 - Andres Manyoma (Microsoft Cyber security)
+
+# Documentation
+1. Clone or download this repository into an Apache web-server
+2. Create a new database in MySQL, name it anything you want 
+3. Inside the db folder, export the database.sql file into your MySQL database 
+4. Inside the db folder, open the dbconnection.php file and configure the variables to your database credentials
+5. Now open a new web-browser and load the index.php webpage
+6. Finished!
