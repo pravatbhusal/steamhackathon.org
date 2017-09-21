@@ -6,8 +6,8 @@ $Game_Name = $_POST["Game_Name"];
 $Author_Name = $_POST["Author_Name"];
 $Game_Description = $_POST["Game_Description"];
 $Game_Type = $_POST["Game_Type"];
-$icon = "db/media/$Game_Name/" . $_FILES['icon']['name'];
-$game = "db/media/$Game_Name/" . $_FILES['game']['name'];
+$icon = "db/media/$Game_Name/" . preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $_FILES['icon']['name']);
+$game = "db/media/$Game_Name/" . preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $_FILES['game']['name']);
 
 //get game type
 if($Game_Type == "Recreational") {
@@ -67,24 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   //UPLOAD ICON
   if (is_uploaded_file($_FILES['icon']['tmp_name'])) 
   { 
-  	//First, Validate the file name
-  	if(empty($_FILES['icon']['name']))
-  	{
-		header("refresh:5;url=$website");
-  		echo "The icon file name is empty!";
-  		exit;
-  	}
- 
   	$upload_file_name = $_FILES['icon']['name'];
-  	//Too long file name?
-  	if(strlen ($upload_file_name)>100)
-  	{
-		header("refresh:5;url=$website");
-  		echo "The icon file name is too long!";
-  		exit;
-  	}
  
-  	//replace any non-alpha-numeric cracters in th file name
+  	//replace any non-alpha-numeric cracters in the file name
   	$upload_file_name = preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $upload_file_name);
  
     //Save the file
@@ -98,24 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   //UPLOAD GAME
   if (is_uploaded_file($_FILES['game']['tmp_name'])) 
   { 
-  	//First, Validate the file name
-  	if(empty($_FILES['game']['name']))
-  	{
-		header("refresh:5;url=$website");
-  		echo "The game file name is empty!";
-  		exit;
-  	}
- 
   	$upload_file_name = $_FILES['game']['name'];
-  	//Too long file name?
-  	if(strlen ($upload_file_name)>100)
-  	{
-		header("refresh:5;url=$website");
-  		echo "The game file name is too long!";
-  		exit;
-  	}
  
-  	//replace any non-alpha-numeric cracters in th file name
+  	//replace any non-alpha-numeric cracters in the file name
   	$upload_file_name = preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $upload_file_name);
  
     //Save the file
