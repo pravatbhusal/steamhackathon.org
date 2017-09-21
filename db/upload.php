@@ -15,29 +15,31 @@ if($Game_Type == "Recreational") {
 } else if($Game_Type == "Informational") {
     $table = "informational_games";
 } else if($Game_Type == "Educational") {
-    $table = "educational_games";   
+    $table = "educational_games";
 }
 
 //check if the game name has not already been used...
 $queryRecreational = "SELECT * FROM recreational_games WHERE Game_Name='$Game_Name'";
 $queryInformational = "SELECT * FROM informational_games WHERE Game_Name='$Game_Name'";
 $queryEducational = "SELECT * FROM educational_games WHERE Game_Name='$Game_Name'";
-if($result = mysqli_query($link, $queryRecreational)) {
-	if(mysqli_num_rows($result)) {
+if($resultRecreational = mysqli_query($link, $queryRecreational)) {
+	if(mysqli_num_rows($resultRecreational)) {
 	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error, the game name '.$Game_Name.' has already been taken! <br> Please re-upload with a different name...</h2>';
 	echo 'Redirecting in 5 seconds...';
 	exit;
 	}
-} else if($result = mysqli_query($link, $queryInformational)) {
-	if(mysqli_num_rows($result)) {
+} 
+if($resultInformational = mysqli_query($link, $queryInformational)) {
+	if(mysqli_num_rows($resultInformational)) {
 	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error, the game name '.$Game_Name.' has already been taken! <br> Please re-upload with a different name...</h2>';
 	echo 'Redirecting in 5 seconds...';
 	exit;
 	}
-} else if($result = mysqli_query($link, $queryEducational)) {
-	if(mysqli_num_rows($result)) {
+} 
+if($resultEducational = mysqli_query($link, $queryEducational)) {
+	if(mysqli_num_rows($resultEducational)) {
 	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error, the game name '.$Game_Name.' has already been taken! <br> Please re-upload with a different name...</h2>';
 	echo 'Redirecting in 5 seconds...';
