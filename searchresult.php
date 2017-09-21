@@ -38,7 +38,7 @@
                   <span class="glyphicon glyphicon-upload" id="uploadGlyph"></span>
                   Upload a Game</a></li>
               </ul>
-             <form class="navbar-form navbar-left" action="searchresult.php" method="POST">
+             <form class="navbar-form navbar-left" action="searchresult.php" method="GET">
                <div class="form-group">
                  <input required type="text" name="search" class="form-control" placeholder="Search for a game...">
                </div>
@@ -53,7 +53,7 @@
             <div id="gamesList">
                 <?php
                 include("db/dbconnection.php");
-                $search = $_POST["search"];
+                $search = $_GET["search"];
                 $resultFound = false;
                 
                 //query through each table
