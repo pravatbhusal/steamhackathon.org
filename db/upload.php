@@ -24,43 +24,39 @@ $queryInformational = "SELECT * FROM informational_games WHERE Game_Name='$Game_
 $queryEducational = "SELECT * FROM educational_games WHERE Game_Name='$Game_Name'";
 if($result = mysqli_query($link, $queryRecreational)) {
 	if(mysqli_num_rows($result)) {
+	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error, the game name '.$Game_Name.' has already been taken! <br> Please re-upload with a different name...</h2>';
 	echo 'Redirecting in 5 seconds...';
-	header("refresh:5;url=$website");
-	exit();
+	exit;
 	}
 } else if($result = mysqli_query($link, $queryInformational)) {
 	if(mysqli_num_rows($result)) {
+	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error, the game name '.$Game_Name.' has already been taken! <br> Please re-upload with a different name...</h2>';
 	echo 'Redirecting in 5 seconds...';
-	header("refresh:5;url=$website");
-	exit();
+	exit;
 	}
 } else if($result = mysqli_query($link, $queryEducational)) {
 	if(mysqli_num_rows($result)) {
+	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error, the game name '.$Game_Name.' has already been taken! <br> Please re-upload with a different name...</h2>';
 	echo 'Redirecting in 5 seconds...';
-	header("refresh:5;url=$website");
-	exit();
+	exit;
 	}
-} else {
-	echo '<h2 style="color:red">Error connecting to the database...</h2>';
-	echo 'Redirecting in 5 seconds...';
-	header("refresh:5;url=$website");
 }
 
 //all else is successfull, input the game into the database and file system!
 $query = "INSERT INTO $table (Author_Name, Game_Name, Game_Type, Game_Description, icon, game) VALUES('$Author_Name', '$Game_Name', '$Game_Type', '$Game_Description', '$icon', '$game')";
 if(mysqli_query($link, $query)) {
+	header("refresh:5;url=$website");
 	echo '<h2 style="color:green">Success, the game '.$Game_Name.' has been uploaded!</h2>';
 	echo 'Redirecting in 5 seconds...';
-	header("refresh:5;url=$website");
 	mkdir("./media/$Game_Name/"); //create directory
 } else {
+	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error connecting to the database...</h2>';
 	echo 'Redirecting in 5 seconds...';
-	header("refresh:5;url=$website");
-	exit();
+	exit;
 }
 
 //UPLOADING INTO FILE SYSTEM
@@ -72,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//First, Validate the file name
   	if(empty($_FILES['icon']['name']))
   	{
+		header("refresh:5;url=$website");
   		echo "The icon file name is empty!";
   		exit;
   	}
@@ -80,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//Too long file name?
   	if(strlen ($upload_file_name)>100)
   	{
+		header("refresh:5;url=$website");
   		echo "The icon file name is too long!";
   		exit;
   	}
@@ -101,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//First, Validate the file name
   	if(empty($_FILES['game']['name']))
   	{
+		header("refresh:5;url=$website");
   		echo "The game file name is empty!";
   		exit;
   	}
@@ -109,6 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   	//Too long file name?
   	if(strlen ($upload_file_name)>100)
   	{
+		header("refresh:5;url=$website");
   		echo "The game file name is too long!";
   		exit;
   	}
@@ -124,9 +124,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
   }
 } else {
+	header("refresh:5;url=$website");
 	echo '<h2 style="color:red">Error, could not upload game file...</h2>';
 	echo 'Redirecting in 5 seconds...';
-	header("refresh:5;url=$website");
-	die();
+	exit;
 }
+exit;
 ?>
