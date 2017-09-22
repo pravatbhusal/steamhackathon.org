@@ -77,7 +77,7 @@
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'!</a></p>  
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a></p>  
                     </div>'; 
                       
                     $resultFound = true;
@@ -94,7 +94,7 @@
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'!</a></p>  
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a></p>  
                     </div>'; 
                       
                     $resultFound = true;
@@ -111,7 +111,7 @@
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'!</a></p>  
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a></p>  
                     </div>'; 
                       
                     $resultFound = true;
@@ -184,7 +184,6 @@
     <script>
         function clickPlay(e) {
             var gameName = ($(e.target).text()).replace("Play ", "");
-            gameName = gameName.replace("!","");
             
             //send a GET request to the playgame.php with the gameName variable
             window.location.replace("playgame.php" + "?gameName=" + gameName);
