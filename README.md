@@ -4,12 +4,11 @@ that teaches kids and teens from 3rd grade to 12th grade about
 S.T.E.A.M. and how it can impact the world.
 
 # Developers
-This website was created as a project under Microsoft/S.T.E.A.M. achievers employees and interns
-- Pravat Bhusal (Microsoft Web developer and Cyber security intern.)
-- Hrishikesh Raj (Microsoft Web developer intern.)
-- Eric Tutu (I.T. coordinator)
-- Naga Kishore (S.T.E.A.M. achievers Software architect)
-- Andres Manyoma (Microsoft Cyber security)
+- Pravat Bhusal (S.T.E.A.M. Achievers Web Developer and Cyber Security Intern.)
+- Hrishikesh Raj (S.T.E.A.M. Achievers Web Developer Intern.)
+- Eric Tutu (Dell I.T. Coordinator)
+- Naga Kishore (S.T.E.A.M. Achievers Software Architect)
+- Andres Manyoma (Microsoft Cyber Security)
 
 # Documentation
 1. Clone or download this repository into an Apache web-server
