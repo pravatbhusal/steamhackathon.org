@@ -56,7 +56,7 @@
                     echo '
                     <div align="center">
                     <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
-                    <object data="Scratch.swf" type="application/x-shockwave-flash" width="487" height="401">
+                    <object data="Scratch.swf" type="application/x-shockwave-flash" width="687" height="570">
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
                     </object>
@@ -68,9 +68,9 @@
                     echo '
                     <div align="center">
                     <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
-                    <object align="middle" width="700" height="400">
+                    <object align="middle" width="800" height="580">
                     <param name="movie" value="'.$game.'">
-                    <embed src="'.$game.'" width="700" height="600">
+                    <embed src="'.$game.'" width="1000" height="1000">
                     </embed>
                     </object>
                     <p><h3>Game Description<h3></p>
@@ -93,7 +93,7 @@
                     echo '
                     <div align="center">
                     <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
-                    <object data="Scratch.swf" type="application/x-shockwave-flash" width="487" height="401">
+                    <object data="Scratch.swf" type="application/x-shockwave-flash" width="687" height="570">
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
                     </object>
@@ -105,9 +105,9 @@
                     echo '
                     <div align="center">
                     <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
-                    <object align="middle" width="700" height="400">
+                    <object align="middle" width="800" height="580">
                     <param name="movie" value="'.$game.'">
-                    <embed src="'.$game.'" width="700" height="600">
+                    <embed src="'.$game.'" width="1000" height="1000">
                     </embed>
                     </object>
                     <p><h3>Game Description<h3></p>
@@ -130,7 +130,7 @@
                     echo '
                     <div align="center">
                     <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
-                    <object data="Scratch.swf" type="application/x-shockwave-flash" width="487" height="401">
+                    <object data="Scratch.swf" type="application/x-shockwave-flash" width="687" height="570">
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
                     </object>
@@ -142,9 +142,9 @@
                     echo '
                     <div align="center">
                     <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
-                    <object align="middle" width="700" height="400">
+                    <object align="middle" width="800" height="580">
                     <param name="movie" value="'.$game.'">
-                    <embed src="'.$game.'" width="700" height="600">
+                    <embed src="'.$game.'" width="1000" height="1000">
                     </embed>
                     </object>
                     <p><h3>Game Description<h3></p>
