@@ -33,8 +33,7 @@
                 <li id="educational"><a href="educational.php">Educational Games</a></li> 
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                  <li><a id="uploadBTN" href="#" data-toggle="modal" data-target="#myModal" data-name="uploadGame">
-                  <span>|</span>
+                  <li><a href="#" data-toggle="modal" data-target="#myModal" data-name="uploadGame">
                   <span class="glyphicon glyphicon-upload" id="uploadGlyph"></span>
                   Upload a Game</a></li>
               </ul>

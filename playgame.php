@@ -19,7 +19,9 @@
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="index.php">Return Home</a>
+              <a class="navbar-brand" href="index.php">
+			  <span class="glyphicon glyphicon-chevron-left" id="uploadGlyph"></span>
+			  Return Home</a>
             </div>
           </div>
         </nav>
