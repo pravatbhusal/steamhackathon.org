@@ -26,6 +26,11 @@ S.T.E.A.M. and how it can impact the world.
 `post_max_size = 32M`  
 3. Finished!
 
+# Setting-up The Mail Service
+1. Find the "upload.php" file in db/upload.php  
+2. Find the line with "pravat.bhusal@gmail.com" and change it to your own email (this is the email receives requests to deny/approve games)  
+3. Now open the "review.php" file in db/review.php  
+4. Find the line with "steamachievers@gmail.com" and change that to the same email from step 2  
+
 # To-do
 1. Implement a 5-star rating system (use HTML5 canvas and cookies)  
-2. Add an approval system before allowing the game to go public
