@@ -27,7 +27,5 @@ S.T.E.A.M. and how it can impact the world.
 3. Finished!
 
 # To-do
-1. Implement a 5-star rating system (use HTML5 canvas and ip address)  
-2. Add an e-mail input field into the upload modal
-3. Add an instruction input field into the upload modal
-4. Add an approval system before allowing the game to go public
+1. Implement a 5-star rating system (use HTML5 canvas and cookies)  
+2. Add an approval system before allowing the game to go public

@@ -52,6 +52,7 @@
                     $gameIcon = $row['icon'];
                     $game = $row['game'];
                     $gameDescription = $row['Game_Description'];
+					$gameInstructions = $row['Game_Instructions'];
                       
                     if(strpos(strtolower($game), "sb2") !== false) {
                     //is a scratch game (sb2)
@@ -64,6 +65,8 @@
                     </object>
                     <p><h3>Game Description<h3></p>
                     <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
                     </div>';
                     } else if(strpos(strtolower($game), "swf") !== false) {
                     //is a flash game (swf)
@@ -77,6 +80,8 @@
                     </object>
                     <p><h3>Game Description<h3></p>
                     <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
                     </div>';
                     }
                   }
@@ -101,6 +106,8 @@
                     </object>
                     <p><h3>Game Description<h3></p>
                     <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
                     </div>';
                     } else if(strpos(strtolower($game), "swf") !== false) {
                     //is a flash game (swf)
@@ -114,6 +121,8 @@
                     </object>
                     <p><h3>Game Description<h3></p>
                     <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
                     </div>';
                     }
                   }
@@ -138,6 +147,8 @@
                     </object>
                     <p><h3>Game Description<h3></p>
                     <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
                     </div>';
                     } else if(strpos(strtolower($game), "swf") !== false) {
                     //is a flash game (swf)
@@ -151,6 +162,8 @@
                     </object>
                     <p><h3>Game Description<h3></p>
                     <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
                     </div>';
                     }
                   }
