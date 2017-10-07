@@ -71,12 +71,14 @@
                     $gameName = $row['Game_Name'];
                     $gameIcon = $row['icon'];
                     $gameDescription = $row['Game_Description'];
-                        
+                    $Rating = $row['Rating'];
+					
                     echo '<div class="jumbotron center-block" id="gameContent">
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a></p>  
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a>
+					<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
                     </div>'; 
                       
                     $resultFound = true;
@@ -88,12 +90,14 @@
                     $gameName = $row['Game_Name'];
                     $gameIcon = $row['icon'];
                     $gameDescription = $row['Game_Description'];
+					$Rating = $row['Rating'];
                         
                     echo '<div class="jumbotron center-block" id="gameContent">
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a></p>  
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a>
+					<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
                     </div>'; 
                       
                     $resultFound = true;
@@ -105,13 +109,15 @@
                     $gameName = $row['Game_Name'];
                     $gameIcon = $row['icon'];
                     $gameDescription = $row['Game_Description'];
+					$Rating = $row['Rating'];
                         
                     echo '<div class="jumbotron center-block" id="gameContent">
                     <h1 class="display-3">'.$gameName.'<span>
                     <img src="'.$gameIcon.'" height="125px" class="img-circle" align="right" width="125px"></span></h1>
                     <p class="lead">'.$gameDescription.'</p>
-                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a></p>  
-                    </div>'; 
+                    <p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a>
+					<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
+                    </div>';  
                       
                     $resultFound = true;
                     }
