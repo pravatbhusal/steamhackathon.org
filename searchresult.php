@@ -73,7 +73,6 @@
                     $gameDescription = $row['Game_Description'];
                     $Rating = $row['Rating'];
 					$Approved = $row['Approved'];
-					
 						if($Approved == "true") {
 						echo '<div class="jumbotron center-block" id="gameContent">
 						<h1 class="display-3">'.$gameName.'<span>
@@ -83,7 +82,6 @@
 						<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
 						</div>';  
 						}
-                      
                     $resultFound = true;
                     }
                 }
@@ -95,7 +93,6 @@
                     $gameDescription = $row['Game_Description'];
 					$Rating = $row['Rating'];
                     $Approved = $row['Approved'];
-					
 						if($Approved == "true") {
 						echo '<div class="jumbotron center-block" id="gameContent">
 						<h1 class="display-3">'.$gameName.'<span>
@@ -105,7 +102,6 @@
 						<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
 						</div>';  
 						}
-                      
                     $resultFound = true;
                     }
                 }

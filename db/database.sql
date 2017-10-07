@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2017 at 10:04 PM
+-- Generation Time: Oct 07, 2017 at 10:15 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `educational_games` (
   `id` int(11) NOT NULL,
-  `Approved` varchar(255) NOT NULL,
+  `Approved` varchar(255) NOT NULL DEFAULT 'false',
   `Rating` int(11) NOT NULL DEFAULT '5',
   `Rater_Number` int(11) NOT NULL DEFAULT '1',
   `Author_Name` varchar(255) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE `educational_games` (
 
 CREATE TABLE `informational_games` (
   `id` int(11) NOT NULL,
-  `Approved` varchar(255) NOT NULL,
+  `Approved` varchar(255) NOT NULL DEFAULT 'false',
   `Rating` int(11) NOT NULL DEFAULT '5',
   `Rater_Number` int(11) NOT NULL DEFAULT '1',
   `Author_Name` varchar(255) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE `informational_games` (
 
 CREATE TABLE `recreational_games` (
   `id` int(11) NOT NULL,
-  `Approved` varchar(255) NOT NULL,
+  `Approved` varchar(255) NOT NULL DEFAULT 'false',
   `Rating` int(11) NOT NULL DEFAULT '5',
   `Rater_Number` int(11) NOT NULL DEFAULT '1',
   `Author_Name` varchar(255) NOT NULL,
