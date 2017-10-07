@@ -97,6 +97,10 @@
                       <label for="exampleSelect1">Author Name*</label>
                     <input required type="text" name="Author_Name" class="form-control" placeholder="e.g. Pravat Bhusal">
                   </div>
+				  <div class="form-group">
+                      <label for="exampleSelect1">Author Email*</label>
+                    <input required type="email" name="Author_Email" class="form-control" placeholder="e.g. pravat.bhusal@gmail.com">
+                  </div>
                   <div class="form-group">
                     <label for="exampleSelect2">Game Type*</label>
                         <select class="form-control" id="exampleSelect1" name="Game_Type">
@@ -108,6 +112,10 @@
                   <div class="form-group">
                     <label for="exampleTextarea">Mini Game Description* (max 250 characters)</label>
                     <textarea name="Game_Description" required class="form-control" id="exampleTextarea" rows="3" maxlength="250"></textarea>
+                  </div>
+				  <div class="form-group">
+                    <label for="exampleTextarea">Game Instructions*</label>
+                    <textarea name="Game_Instructions" required class="form-control" id="exampleTextarea" rows="3" maxlength="250"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleSelect1">Upload Game Icon* (.png, .jpg, .gif)</label>

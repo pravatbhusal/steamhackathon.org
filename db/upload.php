@@ -4,8 +4,10 @@ $website = "http://$_SERVER[HTTP_HOST]";
 $table = "";
 $Game_Name = $_POST["Game_Name"];
 $Author_Name = $_POST["Author_Name"];
+$Author_Email = $_POST["Author_Email"];
 $Game_Description = $_POST["Game_Description"];
 $Game_Type = $_POST["Game_Type"];
+$Game_Instructions = $_POST["Game_Instructions"];
 $icon = "db/media/$Game_Name/" . preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $_FILES['icon']['name']);
 $game = "db/media/$Game_Name/" . preg_replace("/[^A-Za-z0-9 \.\-_]/", '', $_FILES['game']['name']);
 
@@ -48,7 +50,7 @@ if($resultEducational = mysqli_query($link, $queryEducational)) {
 }
 
 //all else is successfull, input the game into the database and file system!
-$query = "INSERT INTO $table (Author_Name, Game_Name, Game_Type, Game_Description, icon, game) VALUES('$Author_Name', '$Game_Name', '$Game_Type', '$Game_Description', '$icon', '$game')";
+$query = "INSERT INTO $table (Author_Name, Author_Email, Game_Name, Game_Type, Game_Description, Game_Instructions, icon, game) VALUES('$Author_Name', '$Author_Email', '$Game_Name', '$Game_Type', '$Game_Description', '$Game_Instructions', '$icon', '$game')";
 if(mysqli_query($link, $query)) {
 	header("refresh:5;url=$website");
 	echo '<h2 style="color:green">Success, the game '.$Game_Name.' has been uploaded!</h2>';
