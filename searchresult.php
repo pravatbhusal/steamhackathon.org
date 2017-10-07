@@ -81,8 +81,8 @@
 						<p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a>
 						<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
 						</div>';  
+						$resultFound = true;
 						}
-                    $resultFound = true;
                     }
                 }
                 while($row = mysqli_fetch_array($resultInformational)) {
@@ -101,8 +101,8 @@
 						<p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a>
 						<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
 						</div>';  
+						$resultFound = true;
 						}
-                    $resultFound = true;
                     }
                 }
                 while($row = mysqli_fetch_array($resultEducational)) {
@@ -121,8 +121,8 @@
 						<p><a class="btn btn-lg btn-info" onclick="clickPlay(event)" href="#" role="button">Play '.$gameName.'</a>
 						<span style="margin-left:10px" class="glyphicon glyphicon-star">'.$Rating.'/5</span></p>
 						</div>';  
+						$resultFound = true;
 						}
-                    $resultFound = true;
                     }
                  }
                 
