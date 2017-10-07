@@ -36,7 +36,11 @@ if(mysqli_query($link, $query)) {
 	
 	//send an email to the creator stating that the game was denied or approved
 	$subject = $Game_Name . " was " . $result . " by STEAM Achievers!";
-	$message = $begin . ", the game " . $Game_Name . " was " . $result . "! Reason: " . $Reason;
+	$message = $begin . ", the game " . $Game_Name . " was " . $result . "! Reason: " . $Reason . " ";
+	$URL_Game_Name = str_replace(' ', '%20', $Game_Name);
+	if($Decision == "true") {
+	$message .= "Play your game here: " . $website . "/playgame.php?gameName=" . $URL_Game_Name;
+	}
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 	$headers .= 'From: '. "steamachievers2@gmail.com" . "\r\n";
