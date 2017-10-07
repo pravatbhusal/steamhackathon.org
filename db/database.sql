@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2017 at 06:32 AM
+-- Generation Time: Oct 07, 2017 at 09:20 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -29,9 +29,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `educational_games` (
   `id` int(11) NOT NULL,
   `Author_Name` varchar(255) NOT NULL,
+  `Author_Email` varchar(255) NOT NULL,
   `Game_Name` varchar(255) NOT NULL,
   `Game_Type` varchar(255) NOT NULL,
   `Game_Description` text NOT NULL,
+  `Game_Instructions` text NOT NULL,
   `icon` text NOT NULL,
   `game` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -45,9 +47,11 @@ CREATE TABLE `educational_games` (
 CREATE TABLE `informational_games` (
   `id` int(11) NOT NULL,
   `Author_Name` varchar(255) NOT NULL,
+  `Author_Email` varchar(255) NOT NULL,
   `Game_Name` varchar(255) NOT NULL,
   `Game_Type` varchar(255) NOT NULL,
   `Game_Description` text NOT NULL,
+  `Game_Instructions` text NOT NULL,
   `icon` text NOT NULL,
   `game` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -61,9 +65,11 @@ CREATE TABLE `informational_games` (
 CREATE TABLE `recreational_games` (
   `id` int(11) NOT NULL,
   `Author_Name` varchar(255) NOT NULL,
+  `Author_Email` varchar(255) NOT NULL,
   `Game_Name` varchar(255) NOT NULL,
   `Game_Type` varchar(255) NOT NULL,
   `Game_Description` text NOT NULL,
+  `Game_Instructions` text NOT NULL,
   `icon` text NOT NULL,
   `game` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
