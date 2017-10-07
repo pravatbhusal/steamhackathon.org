@@ -56,6 +56,15 @@ if(mysqli_query($link, $query)) {
 	echo '<h2 style="color:green">Success, the game '.$Game_Name.' has been sent for review! <br> An e-mail will be sent to '.$Author_Email.' in the next couple of days regarding the review.</h2>';
 	echo 'Redirecting in 10 seconds...';
 	mkdir("./media/$Game_Name/"); //create directory
+	
+	//send an email to the host to ask them to approve the game
+	$to = "pravat.bhusal@gmail.com";
+	$subject = "Game Review Request For: " . $Game_Name;
+	$message = "Request for review link: " . $website . "playgame.php" . "?gameName=" . $Game_Name;
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+	$headers .= 'From: '. $Author_Email . "\r\n";
+	mail($to,$subject,$message,$headers);
 } else {
 	header("refresh:10;url=$website");
 	echo '<h2 style="color:red">Error connecting to the database...</h2>';
