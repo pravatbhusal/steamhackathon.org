@@ -19,7 +19,5 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 $query = "UPDATE $table SET Rating='$dbNewRating', Rater_Number='$dbNewRater_Number' WHERE Game_Name='$Game_Name'";
-if(mysqli_query($link, $query)) {
-	echo("Thank you for rating " . $Game_Name . " as " . $Rating . " stars!");
-}
+mysqli_query($link, $query);
 ?>

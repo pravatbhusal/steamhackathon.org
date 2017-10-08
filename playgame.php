@@ -26,6 +26,7 @@
             </div>
           </div>
         </nav>
+		
 	<?php 
 	           //now find the gamename within the database...
                 include("db/dbconnection.php");
@@ -53,12 +54,15 @@
                     $game = $row['game'];
                     $gameDescription = $row['Game_Description'];
 					$gameInstructions = $row['Game_Instructions'];
+					$gameType = "recreational_games";
                       
                     if(strpos(strtolower($game), "sb2") !== false) {
                     //is a scratch game (sb2)
                     echo '
                     <div align="center">
-                    <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+                    <h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
                     <object data="Scratch.swf" type="application/x-shockwave-flash" width="687" height="570">
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
@@ -76,7 +80,9 @@
                     //is a flash game (swf)
                     echo '
                     <div align="center">
-                    <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+                    <h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
                     <object align="middle" width="800" height="580">
                     <param name="movie" value="'.$game.'">
                     <embed src="'.$game.'" width="1000" height="1000">
@@ -94,7 +100,9 @@
                     } else {
 					//unknown game format
 					echo '<div align="center">
-					<h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+					<h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
 					<h3 style="color:red">Game contains an unknown file format!</h3>
 					<a href="'.$game.'"><h1>Download The Game</h1></a>
 					<p><h3 id="rateLabel">Rate This Game!</h3></p>
@@ -117,12 +125,15 @@
                     $gameIcon = $row['icon'];
                     $game = $row['game'];
                     $gameDescription = $row['Game_Description'];
+					$gameType = "informational_games";
                       
                     if(strpos(strtolower($game), "sb2") !== false) {
                     //is a scratch game (sb2)
                     echo '
                     <div align="center">
-                    <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+                    <h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
                     <object data="Scratch.swf" type="application/x-shockwave-flash" width="687" height="570">
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
@@ -140,7 +151,9 @@
                     //is a flash game (swf)
                     echo '
                     <div align="center">
-                    <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+                    <h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
                     <object align="middle" width="800" height="580">
                     <param name="movie" value="'.$game.'">
                     <embed src="'.$game.'" width="1000" height="1000">
@@ -158,7 +171,9 @@
                     } else {
 					//unknown game format
 					echo '<div align="center">
-					<h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+					<h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
 					<h3 style="color:red">Game contains an unknown file format!</h3>
 					<a href="'.$game.'"><h1>Download The Game</h1></a>
 					<p><h3 id="rateLabel">Rate This Game!</h3></p>
@@ -181,12 +196,15 @@
                     $gameIcon = $row['icon'];
                     $game = $row['game'];
                     $gameDescription = $row['Game_Description'];
+					$gameType = "educational_games";
                       
                     if(strpos(strtolower($game), "sb2") !== false) {
                     //is a scratch game (sb2)
                     echo '
                     <div align="center">
-                    <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+                    <h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
                     <object data="Scratch.swf" type="application/x-shockwave-flash" width="687" height="570">
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
@@ -204,7 +222,9 @@
                     //is a flash game (swf)
                     echo '
                     <div align="center">
-                    <h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+                    <h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
                     <object align="middle" width="800" height="580">
                     <param name="movie" value="'.$game.'">
                     <embed src="'.$game.'" width="1000" height="1000">
@@ -222,7 +242,9 @@
                     } else {
 					//unknown game format
 					echo '<div align="center">
-					<h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+					<h1><b>'.$gameName.', created by '.$authorName.'</b>
+					<button id="reportBTN" style="margin-left: 20px;" type="button" class="btn btn-danger">Report</button>
+					</h1>
 					<h3 style="color:red">Game contains an unknown file format!</h3>
 					<a href="'.$game.'"><h1>Download The Game</h1></a>
 					<p><h3 id="rateLabel">Rate This Game!</h3></p>
@@ -237,9 +259,9 @@
 					}
                   }
                  }
-	?>
-    </body>   
-
+	?>  
+	</body>
+	
     <!--jquery,bootstrap, and rateYo!-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -252,6 +274,7 @@
 		(document.body.offsetHeight-window.innerHeight)/2
 	  );
 	  
+	  //read cookie function
 	  function readCookie(name) {
 		var nameEQ = name + "=";
 		var ca = document.cookie.split(';');
@@ -263,12 +286,13 @@
 		return null;
 	  }
 	  
+	  //get information on the game
 	  var gameType = $("#gameType").attr("value");
 	  var $_GET=[];
 	  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
 	  var gameName = $_GET['gameName'].replace("%20", " ");
-	  
 	  var rating = readCookie("rating" + $_GET['gameName']);
+	  
 	  if(!rating) { //if we haven't rated, then allow us to rate
 		  var $rateYo = $("#rateYo").rateYo({
 				rating: 0,
@@ -295,7 +319,6 @@
                 type: 'POST',
                 data: {Game_Name: gameName, rating: rateYoRating, Game_Type: gameType},
                 success: function (result) {
-					alert(result);
                 }
             });
 		  });
@@ -303,5 +326,28 @@
 		  $("#getRating").remove();
 		  $("#rateLabel").html("Thank you for rating!");
 	  }
+	  
+	  //report game
+	  $("#reportBTN").click(function () {
+		$('#reportBTN').after("<textarea placeholder='Why are you reporting this game?*' id='reportReason' name='Reason' style='width:50%; height:100px;' class='form-control'></textarea>"); 
+		$('#reportReason').after("<button id='submitReport' type='button' class='btn btn-danger'>Submit Report</button>"); 
+		$('#reportBTN').remove();
+			//if the user clicks the submit report button and there's text in the report box
+			$("#submitReport").click(function () {
+				  if($("#reportReason").val()) {
+				  $('#reportReason').after("<h3 style='color:green'>Thank you, your report has been sent for review.</h3>"); 
+					//send the report via ajax
+					$.ajax({
+						url: 'db/report.php',
+						type: 'POST',
+						data: {Game_Name: gameName, Reason: $("#reportReason").val()},
+						success: function (result) {
+						}
+					});
+				  $('#reportReason').remove();
+				  $('#submitReport').remove();
+				  }
+			});
+	  });
 	</script>
 </html>
