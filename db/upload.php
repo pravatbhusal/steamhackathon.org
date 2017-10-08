@@ -61,7 +61,7 @@ if(mysqli_query($link, $query)) {
 	$to = $hostEmail;
 	$subject = "Game Review Request For: " . $Game_Name;
 	$URL_Game_Name = str_replace(' ', '%20', $Game_Name);
-	$message = "Request for game review: " . '<a href="'.$website.'/playgame.php?gameName='.$URL_Game_Name.'">'.$Game_Name.'</a>';
+	$message = "Request for game review: " . '<a href="'.$website.'/reviewgame.php?gameName='.$URL_Game_Name.'">'.$Game_Name.'</a>';
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 	$headers .= 'From: '. $Author_Email . "\r\n";
