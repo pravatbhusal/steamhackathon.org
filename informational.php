@@ -59,8 +59,8 @@
                 while($row = mysqli_fetch_array($result)) {
                   $games[] = $row;
                 }
-                //reverse the original array so that the program can grab the latest uploaded games
-                $games = array_reverse($games);
+                //shuffle the original array so that the program can grab games at random
+                shuffle($games);
                     for($i = 0; $i < count($games); $i++) {
                     $gameName = $games[$i]['Game_Name'];
                     $gameIcon = $games[$i]['icon'];
