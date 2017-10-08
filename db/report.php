@@ -7,7 +7,7 @@ $Reason = $_POST["Reason"];
 
 	//send an email to the host email with the report request
 	$subject = $Game_Name . " has been reported!";
-	$message = "Reason: " . $Reason;
+	$message = "Reason: " . $Reason . " ";
 	$URL_Game_Name = str_replace(' ', '%20', $Game_Name);
 	$message .= "Review the game here: " . '<a href="'.$website.'/reviewgame.php?gameName='.$URL_Game_Name.'">'.$Game_Name.'</a>';
 	$headers = "MIME-Version: 1.0" . "\r\n";
