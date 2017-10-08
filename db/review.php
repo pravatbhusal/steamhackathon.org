@@ -43,7 +43,7 @@ if(mysqli_query($link, $query)) {
 	}
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-	$headers .= 'From: '. "steamachievers2@gmail.com" . "\r\n";
+	$headers .= 'From: '. $hostEmail . "\r\n";
 	mail($Author_Email,$subject,$message,$headers);
 } else {
 	header("refresh:10;url=$website");

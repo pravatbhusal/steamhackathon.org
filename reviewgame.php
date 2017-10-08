@@ -24,6 +24,7 @@
         </nav>
 		
 	<?php
+		include("db/dbconnection.php");
 		//make a password enter field
 		$gameName = $_GET['gameName'];
 		
@@ -34,7 +35,7 @@
 		}
 		
 		//if we got the correct password, then allow us to edit. if not, then tell the user password was incorrect or to input a password!
-		if($password == "steamachieversrocks") {
+		if($password == $reviewPassword) {
 		   echo '
 		   <p align="center" style="margin-top: 10px">
 		   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#approveGame" data-name="approveGame">Approve</button>
@@ -54,7 +55,6 @@
 	 ?>
 	<?php 	
 	           //now find the gamename within the database...
-                include("db/dbconnection.php");
                 $gameName = $_GET["gameName"];
                 $recreationalGames = array();
                 $informationalGames = array();

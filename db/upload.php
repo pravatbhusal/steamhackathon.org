@@ -58,7 +58,7 @@ if(mysqli_query($link, $query)) {
 	mkdir("./media/$Game_Name/"); //create directory
 	
 	//send an email to the host to ask them to approve the game
-	$to = "pravat.bhusal@gmail.com";
+	$to = $hostEmail;
 	$subject = "Game Review Request For: " . $Game_Name;
 	$URL_Game_Name = str_replace(' ', '%20', $Game_Name);
 	$message = "Request for review link: " . $website . "/reviewgame.php?gameName=" . $URL_Game_Name;
