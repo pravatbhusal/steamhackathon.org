@@ -8,10 +8,11 @@
         <meta name="author" content=""> 
         <title>Play Game</title>    
 
-		<!--style.css, favcon, bootstrap-->
+		<!--style.css, favcon, bootstrap, and rateYo!-->
         <link href="style.css" rel="stylesheet">       
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  	
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">		
     </head>
 	
     <body>
@@ -25,7 +26,6 @@
             </div>
           </div>
         </nav>
-        
 	<?php 
 	           //now find the gamename within the database...
                 include("db/dbconnection.php");
@@ -63,10 +63,14 @@
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
                     </object>
-                    <p><h3>Game Description<h3></p>
+					<p><h3 id="rateLabel">Rate This Game!</h3></p>
+					<div id="rateYo"></div>
+					<button id="getRating" style="margin-top:7px">Set Rating</button>
+                    <p><h3>Game Description</h3></p>
                     <h4>'.$gameDescription.'</h4>
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
+					<p id="gameType" value="recreational_games" style="visbility: hidden"></p>
                     </div>';
                     } else if(strpos(strtolower($game), "swf") !== false) {
                     //is a flash game (swf)
@@ -78,10 +82,14 @@
                     <embed src="'.$game.'" width="1000" height="1000">
                     </embed>
                     </object>
-                    <p><h3>Game Description<h3></p>
+					<p><h3 id="rateLabel">Rate This Game!</h3></p>
+					<div id="rateYo"></div>
+					<button id="getRating" style="margin-top:7px">Set Rating</button>
+                    <p><h3>Game Description</h3></p>
                     <h4>'.$gameDescription.'</h4>
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
+					<p id="gameType" value="recreational_games" style="visbility: hidden"></p>
                     </div>';
                     }
                   }
@@ -104,10 +112,14 @@
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
                     </object>
-                    <p><h3>Game Description<h3></p>
+					<p><h3 id="rateLabel">Rate This Game!</h3></p>
+					<div id="rateYo"></div>
+					<button id="getRating" style="margin-top:7px">Set Rating</button>
+                    <p><h3>Game Description</h3></p>
                     <h4>'.$gameDescription.'</h4>
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
+					<p id="gameType" value="informational_games" style="visbility: hidden"></p>
                     </div>';
                     } else if(strpos(strtolower($game), "swf") !== false) {
                     //is a flash game (swf)
@@ -119,10 +131,14 @@
                     <embed src="'.$game.'" width="1000" height="1000">
                     </embed>
                     </object>
-                    <p><h3>Game Description<h3></p>
+					<p><h3 id="rateLabel">Rate This Game!</h3></p>
+					<div id="rateYo"></div>
+					<button id="getRating" style="margin-top:7px">Set Rating</button>
+                    <p><h3>Game Description</h3></p>
                     <h4>'.$gameDescription.'</h4>
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
+					<p id="gameType" value="informational_games" style="visbility: hidden"></p>
                     </div>';
                     }
                   }
@@ -145,10 +161,14 @@
                     <param name="allowscriptaccess" value="always">
                     <param name="flashvars" value="project='.$game.'">
                     </object>
-                    <p><h3>Game Description<h3></p>
+					<p><h3 id="rateLabel">Rate This Game!</h3></p>
+					<div id="rateYo"></div>
+					<button id="getRating" style="margin-top:7px">Set Rating</button>
+                    <p><h3>Game Description</h3></p>
                     <h4>'.$gameDescription.'</h4>
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
+					<p id="gameType" value="educational_games" style="visbility: hidden"></p>
                     </div>';
                     } else if(strpos(strtolower($game), "swf") !== false) {
                     //is a flash game (swf)
@@ -160,10 +180,14 @@
                     <embed src="'.$game.'" width="1000" height="1000">
                     </embed>
                     </object>
-                    <p><h3>Game Description<h3></p>
+					<p><h3 id="rateLabel">Rate This Game!</h3></p>
+					<div id="rateYo"></div>
+					<button id="getRating" style="margin-top:7px">Set Rating</button>
+                    <p><h3>Game Description</h3></p>
                     <h4>'.$gameDescription.'</h4>
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
+					<p id="gameType" value="educational_games" style="visbility: hidden"></p>
                     </div>';
                     }
                   }
@@ -171,9 +195,10 @@
 	?>
     </body>   
 
-    <!--jquery and bootstrap-->
+    <!--jquery,bootstrap, and rateYo!-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 	
 	<script>
 	//make the scrollbar start at the middle
@@ -181,5 +206,46 @@
 		(document.body.offsetWidth -window.innerWidth )/2,
 		(document.body.offsetHeight-window.innerHeight)/2
 	  );
+	  
+	  var gameType = $("#gameType").attr("value");
+	  
+	  var rating = document.cookie;
+	  if(!rating) { //if we haven't rated, then allow us to rate
+		  var $rateYo = $("#rateYo").rateYo({
+				rating: 0,
+				fullStar: true
+		  });
+	  } else {
+		  var $rateYo = $("#rateYo").rateYo({
+				rating: rating,
+				readOnly: true
+		  });
+	  }
+	  
+	  if(!rating) { //only allow this function to be enabled if we haven't rated
+		  $("#getRating").click(function () {
+			var rateYoRating = $rateYo.rateYo("rating");
+			document.cookie = rateYoRating;
+		    $("#getRating").remove();
+		    $("#rateLabel").html("Thank you for rating!");
+			$rateYo.rateYo(); //read only
+			
+			//send the rating via ajax
+			var $_GET=[];
+			window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
+			var gameName = $_GET['gameName'].replace("%20", " ");
+            $.ajax({
+                url: 'db/rate.php',
+                type: 'POST',
+                data: {Game_Name: gameName, rating: rateYoRating, Game_Type: gameType},
+                success: function (result) {
+					alert(result);
+                }
+            });
+		  });
+	  } else {
+		  $("#getRating").remove();
+		  $("#rateLabel").html("Thank you for rating!");
+	  }
 	</script>
 </html>

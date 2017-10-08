@@ -53,7 +53,7 @@ if($resultEducational = mysqli_query($link, $queryEducational)) {
 $query = "INSERT INTO $table (Author_Name, Author_Email, Game_Name, Game_Type, Game_Description, Game_Instructions, icon, game) VALUES('$Author_Name', '$Author_Email', '$Game_Name', '$Game_Type', '$Game_Description', '$Game_Instructions', '$icon', '$game')";
 if(mysqli_query($link, $query)) {
 	header("refresh:10;url=$website");
-	echo '<h2 style="color:green">Success, the game '.$Game_Name.' has been sent for review! <br> An e-mail will be sent to '.$Author_Email.' in the next couple of days regarding the review.</h2>';
+	echo '<h2 style="color:green">Success, the game '.$Game_Name.' has been sent for review! <br> An e-mail will be sent to '.$Author_Email.' in a while regarding the decision.</h2>';
 	echo 'Redirecting in 10 seconds...';
 	mkdir("./media/$Game_Name/"); //create directory
 	
