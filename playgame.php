@@ -207,9 +207,20 @@
 		(document.body.offsetHeight-window.innerHeight)/2
 	  );
 	  
+	  function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	  }
+	  
 	  var gameType = $("#gameType").attr("value");
 	  
-	  var rating = document.cookie;
+	  var rating = readCookie("rating");
 	  if(!rating) { //if we haven't rated, then allow us to rate
 		  var $rateYo = $("#rateYo").rateYo({
 				rating: 0,
@@ -225,7 +236,7 @@
 	  if(!rating) { //only allow this function to be enabled if we haven't rated
 		  $("#getRating").click(function () {
 			var rateYoRating = $rateYo.rateYo("rating");
-			document.cookie = rateYoRating;
+			document.cookie = "rating=" + rateYoRating;
 		    $("#getRating").remove();
 		    $("#rateLabel").html("Thank you for rating!");
 			$rateYo.rateYo(); //read only
