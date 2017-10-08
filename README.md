@@ -31,4 +31,3 @@ S.T.E.A.M. and how it can impact the world.
 3. Finished!
 
 # To-do
-1. Report system (email to the host when a report is given) 
