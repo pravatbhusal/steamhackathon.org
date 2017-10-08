@@ -39,7 +39,7 @@ if(mysqli_query($link, $query)) {
 	$message = $begin . ", the game " . $Game_Name . " was " . $result . "! Reason: " . $Reason . " ";
 	$URL_Game_Name = str_replace(' ', '%20', $Game_Name);
 	if($Decision == "true") {
-	$message .= "Play your game here: " . $website . "/playgame.php?gameName=" . $URL_Game_Name;
+	$message .= "Play your game here: " . '<a href="'.$website.'/playgame.php?gameName='.$URL_Game_Name.'">'.$Game_Name.'</a>';
 	}
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
