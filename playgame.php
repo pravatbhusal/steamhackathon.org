@@ -219,8 +219,11 @@
 	  }
 	  
 	  var gameType = $("#gameType").attr("value");
+	  var $_GET=[];
+	  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
+	  var gameName = $_GET['gameName'].replace("%20", " ");
 	  
-	  var rating = readCookie("rating");
+	  var rating = readCookie("rating" + $_GET['gameName']);
 	  if(!rating) { //if we haven't rated, then allow us to rate
 		  var $rateYo = $("#rateYo").rateYo({
 				rating: 0,
@@ -236,15 +239,12 @@
 	  if(!rating) { //only allow this function to be enabled if we haven't rated
 		  $("#getRating").click(function () {
 			var rateYoRating = $rateYo.rateYo("rating");
-			document.cookie = "rating=" + rateYoRating;
+			document.cookie = "rating" + $_GET['gameName'] + "=" + rateYoRating
 		    $("#getRating").remove();
 		    $("#rateLabel").html("Thank you for rating!");
 			$rateYo.rateYo(); //read only
 			
 			//send the rating via ajax
-			var $_GET=[];
-			window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
-			var gameName = $_GET['gameName'].replace("%20", " ");
             $.ajax({
                 url: 'db/rate.php',
                 type: 'POST',

@@ -23,12 +23,36 @@
           </div>
         </nav>
 		
-       <p align="center" style="margin-top: 10px">
-	   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#approveGame" data-name="approveGame">Approve</button>
-	   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#denyGame" data-name="denyGame">Deny</button>
-	   </p>
-	   
-	<?php 
+	<?php
+		//make a password enter field
+		$gameName = $_GET['gameName'];
+		
+		if(isset($_POST['Password'])) {
+			$password = $_POST['Password'];
+		} else {
+			$password = "";	
+		}
+		
+		//if we got the correct password, then allow us to edit. if not, then tell the user password was incorrect or to input a password!
+		if($password == "steamachieversrocks") {
+		   echo '
+		   <p align="center" style="margin-top: 10px">
+		   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#approveGame" data-name="approveGame">Approve</button>
+		   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#denyGame" data-name="denyGame">Deny</button>
+		   </p> ';
+		} else if($password != ""){
+			echo '<form align="center" method="POST" action="reviewgame.php?gameName='.$gameName.'">
+            Password: <input type="password" name="Password"></input>
+            <input type="submit" name="submit" value="Submit"></input>
+            </form><p style="color:red" align="center">Password was incorrect!</p>';
+		} else {
+			echo '<form align="center" method="POST" action="reviewgame.php?gameName='.$gameName.'">
+            Password: <input type="password" name="Password"></input>
+            <input type="submit" name="submit" value="Submit"></input>
+            </form> ';
+		}
+	 ?>
+	<?php 	
 	           //now find the gamename within the database...
                 include("db/dbconnection.php");
                 $gameName = $_GET["gameName"];
