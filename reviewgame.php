@@ -111,7 +111,18 @@
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
                     </div>';
-                    }
+                    } else {
+					//unknown game format
+					echo '<div align="center">
+					<h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+					<h3 style="color:red">Game contains an unknown file format!</h3>
+					<a href="'.$game.'"><h1>Download The Game</h1></a>
+                    <p><h3>Game Description</h3></p>
+                    <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
+                    </div>';
+					}
                   }
                 }
                 while($row = mysqli_fetch_array($resultInformational)) {
@@ -154,7 +165,18 @@
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
                     </div>';
-                    }
+                    } else {
+					//unknown game format
+					echo '<div align="center">
+					<h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+					<h3 style="color:red">Game contains an unknown file format!</h3>
+					<a href="'.$game.'"><h1>Download The Game</h1></a>
+                    <p><h3>Game Description</h3></p>
+                    <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
+                    </div>';
+					}
                   }
                 }
                 while($row = mysqli_fetch_array($resultEducational)) {
@@ -197,7 +219,18 @@
 					<p><h3>Game Instructions<h3></p>
                     <h4>'.$gameInstructions.'</h4>
                     </div>';
-                    }
+                    } else {
+					//unknown game format
+					echo '<div align="center">
+					<h1><b>'.$gameName.', created by '.$authorName.'</b></h1>
+					<h3 style="color:red">Game contains an unknown file format!</h3>
+					<a href="'.$game.'"><h1>Download The Game</h1></a>
+                    <p><h3>Game Description</h3></p>
+                    <h4>'.$gameDescription.'</h4>
+					<p><h3>Game Instructions<h3></p>
+                    <h4>'.$gameInstructions.'</h4>
+                    </div>';
+					}
                   }
                  }
 	?>
