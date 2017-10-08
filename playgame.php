@@ -346,6 +346,8 @@
 					});
 				  $('#reportReason').remove();
 				  $('#submitReport').remove();
+				  } else {
+					alert("Please input a reason for your report!");  
 				  }
 			});
 	  });
