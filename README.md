@@ -12,11 +12,10 @@ S.T.E.A.M. and how it can impact the world.
 
 # Database Configuration
 1. Clone or download this repository into an Apache web-server
-2. Create a new database in MySQL, name it anything you want 
-3. Inside the db folder, export the database.sql file into your MySQL database 
-4. Inside the db folder, open the dbconnection.php file and configure the variables to your database credentials
-5. Now open a new web-browser and load the index.php webpage
-6. Finished!
+2. Inside the db folder, export the database.sql file into your MySQL database 
+3. Inside the db folder, open the dbconnection.php file and configure the variables to your database credentials
+4. Now open a new web-browser and load the index.php webpage
+5. Finished!
 
 # Email, Reporting, and Rating Configuration
 1. Inside the db folder, open the dbconnection.php file and configure the reviewPassword and hostEmail variables
