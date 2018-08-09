@@ -6,7 +6,7 @@ S.T.E.A.M. and how it can impact the world.
 # Developers
 - Pravat Bhusal (S.T.E.A.M. Achievers Lead Web Developer and Lead Cyber Security Intern.)
 - Hrishikesh Rajashekarbabu (S.T.E.A.M. Achievers Web Developer Intern.)
-- Michael Kasman (S.T.E.A.M. Achievers Web Developer Intern.)
+- Michael Kasman (S.T.E.A.M. Achievers Software Engineer Intern.)
 - Rohith Rajashekarbabu (S.T.E.A.M. Achievers Database Developer Intern.)
 - Eric Tutu (Dell I.T. Coordinator)
 - Andres Manyoma (Microsoft Cyber Security)
