@@ -4,11 +4,11 @@ that teaches kids and teens from 3rd grade to 12th grade about
 S.T.E.A.M. and how it can impact the world.
 
 # Developers
-- Pravat Bhusal (S.T.E.A.M. Achievers Web Developer and Cyber Security Intern.)
+- Pravat Bhusal (S.T.E.A.M. Achievers Lead Web Developer and Lead Cyber Security Intern.)
 - Hrishikesh Rajashekarbabu (S.T.E.A.M. Achievers Web Developer Intern.)
+- Michael Kasman (S.T.E.A.M. Achievers Web Developer Intern.)
 - Rohith Rajashekarbabu (S.T.E.A.M. Achievers Database Developer Intern.)
 - Eric Tutu (Dell I.T. Coordinator)
-- Naga Kishore (S.T.E.A.M. Achievers Software Architect)
 - Andres Manyoma (Microsoft Cyber Security)
 
 # Database Configuration
