@@ -14,6 +14,12 @@ S.T.E.A.M. and how it can impact the world.
 # UI Designers
 - Mostafa Amir
 
+<img src="images/dashboard.jpg" />
+
+<img src="images/upload.jpg" />
+
+<img src="images/rating.jpg" />
+
 # Database Configuration
 1. Clone or download this repository into an Apache web-server
 2. Inside the db folder, export the database.sql file into your MySQL database 
