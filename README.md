@@ -11,6 +11,9 @@ S.T.E.A.M. and how it can impact the world.
 - Eric Tutu (Dell I.T. Coordinator)
 - Andres Manyoma (Microsoft Cyber Security)
 
+# UI Designers
+- Mostafa Amir
+
 # Database Configuration
 1. Clone or download this repository into an Apache web-server
 2. Inside the db folder, export the database.sql file into your MySQL database 
